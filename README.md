@@ -1,6 +1,9 @@
 1:下载了钉钉的官方demo，发现加密／解密方式使用的是不支持php7+版本的加密函数,例如如下: $size = mcrypt_get_block_size(MCRYPT_RIJNDAEL_128, MCRYPT_MODE_CBC); $module = mcrypt_module_open(MCRYPT_RIJNDAEL_128, '', MCRYPT_MODE_CBC, '');
 
-2:遇到的坑 注册三个参数解释 define("SUITE_KEY", "钉钉的CorpId值");//这儿有个坑，有时是需要填写应用的AppKey，所以如果遇到注册不成功，可以把这儿更换下 define("TOKEN", "自己定义的随时字符串"); define("ENCODING_AES_KEY", "自己定义46个字符的字符串");
+2:遇到的坑 注册三个参数解释 
+define("SUITE_KEY", "钉钉的CorpId值");//这儿有个坑，有时是需要填写应用的AppKey，所以如果遇到注册不成功，可以把这儿更换下 
+define("TOKEN", "自己定义的随时字符串"); 
+define("ENCODING_AES_KEY", "自己定义46个字符的字符串");
 
 3:代码实例
 
