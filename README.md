@@ -10,14 +10,22 @@ define("ENCODING_AES_KEY", "自己定义46个字符的字符串");
 3.1:注册回调
 
   $dingding=new DingDingSdk();//钉钉的请求类，也可以使用官方，这是自己封装的
+  
     $data=[];
+    
     $data["call_back_tag"]=["user_add_org","user_modify_org","user_leave_org","label_user_change"];//注册事件
     $data["token"]="XXXXXXX";//第二步定义的TOKEN
+    
     $data["aes_key"]="XXXXX";//第二步定义的ENCODING_AES_KEY
+    
     $data["url"]="自己的回调地址";
+    
    //注册钉钉的方法
+   
     $res=$dingding->RegisterCallBack($data);
+    
     var_dump($res);die;
+    
 3.2:验证回调 第一次注册的写法 define("SUITE_KEY", "第二步定义的SUITE_KEY"); define("TOKEN", "第二步定义的TOKEN"); define("ENCODING_AES_KEY", "第二步定义的ENCODING_AES_KEY");
 
     $signature = $_GET["signature"];
